@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:listitem="@layout/chat_item"
+        android:layout_above="@id/bottom_layout"
+        android:background="@color/black"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/welcome_text"
+        android:textColor="@color/white"
+        android:layout_centerInParent="true"
+        android:text="Welcome to ChatGPT \nApplication"
+        android:gravity="center"
+        android:textSize="28dp"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:padding="8dp"
+        android:background="@drawable/rounded_corner"
+        android:id="@+id/bottom_layout">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_centerInParent="true"
+            android:padding="5dp"
+            android:hint="Ask me anythiing"
+            android:textColorHint="@color/black"
+            app:hintTextColor="@color/black"
+            android:layout_alignParentLeft="true">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/message_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:ems="10"
+                android:imeOptions="actionSend"
+                android:textColor="@color/black"
+                android:textColorHint="@color/black"
+                android:textSize="14sp" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <ImageButton
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:id="@+id/send_btn"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="10dp"
+            android:padding="8dp"
+            android:src="@drawable/baseline_send_24"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="SendChats"
+        />
+
+    </RelativeLayout>
+</RelativeLayout>
